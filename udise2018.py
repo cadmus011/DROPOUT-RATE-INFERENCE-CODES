@@ -16,7 +16,7 @@ target_col = "Drop-Out Rate Of Secondary School (UOM:Ratio), Scaling Factor:1"
 df = df[~df[target_col].isna()]
 
 train_data = df[df['Year'].between(2014, 2017)]
-features = ['State', 'Gender', 'Year', "Drop-Out Rate Of Primary School (UOM:Ratio), Scaling Factor:1"]
+features = ['State', 'Gender', 'Year', "Drop-Out Rate Of Secondary School (UOM:Ratio), Scaling Factor:1"]
 model = Pipeline([
     ('preprocess', ColumnTransformer([
         ('encode', OneHotEncoder(handle_unknown='ignore'), ['State', 'Gender'])
